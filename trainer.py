@@ -3,6 +3,7 @@ from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
 
 from models.text_rnn import TextRNN
+from models.text_cnn import TextCNN
 
 max_features = 50
 maxlen = 40
@@ -22,7 +23,7 @@ print('x_train shape:', x_train.shape)
 print('x_test shape:', x_test.shape)
 
 print('Build model...')
-model = TextRNN(maxlen, max_features, embedding_dims)
+model = TextCNN(maxlen, max_features, embedding_dims)
 model.compile('adam', 'binary_crossentropy', metrics=['accuracy'])
 
 print('Train...')
