@@ -16,14 +16,22 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="text" rows="3"></textarea>
             </div>
         </div>
         <div class="col-md-6">
             Writing statistics go here.
+            <div id="result">
+            Words: <span id="wordCount">0</span><br/>
+            Total Characters(including trails): <span id="totalChars">0</span><br/>
+            Characters (excluding trails): <span id="charCount">0</span><br/>
+            Characters (excluding all spaces): <span id="charCountNoSpace">0</span>
+        </div>
         </div>
     </div>
 </main>
+
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -35,5 +43,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
 </body>
 </html>
