@@ -1,32 +1,43 @@
-counter = function() {
-    var value = $('#text').val();
+// Load the model.
+use.load().then(model => {
 
-    if (value.length == 0) {
-        $('#wordCount').html(0);
-        $('#totalChars').html(0);
-        $('#charCount').html(0);
-        $('#charCountNoSpace').html(0);
-        return;
-    }
+    counter = function () {
+        var value = $('#text').val();
 
-    var regex = /\s+/gi;
-    var wordCount = value.trim().replace(regex, ' ').split(' ').length;
-    var totalChars = value.length;
-    var charCount = value.trim().length;
-    var charCountNoSpace = value.replace(regex, '').length;
+        if (value.length == 0) {
+            $('#wordCount').html(0);
+            $('#totalChars').html(0);
+            $('#charCount').html(0);
+            $('#charCountNoSpace').html(0);
+            return;
+        }
 
-    $('#wordCount').html(wordCount);
-    $('#totalChars').html(totalChars);
-    $('#charCount').html(charCount);
-    $('#charCountNoSpace').html(charCountNoSpace);
-};
+        var sentences = value.match(/[^\.!\?]+[\.!\?]+/g);
+        $('#sentenceArray').html(sentences);
 
-$(document).ready(function() {
-    $('#count').click(counter);
-    $('#text').change(counter);
-    $('#text').keydown(counter);
-    $('#text').keypress(counter);
+        if (sentences.length > 0) {
+            model.embed(sentences).then(embeddings => {
+                // `embeddings` is a 2D tensor consisting of the 512-dimensional embeddings for each sentence.
+                // So in this example `embeddings` has the shape [2, 512].
+                embeddings.array().then(array => $('#embeddingsArray').html(array));
+
+            });
+
+        }
+
+
+        var regex = /\s+/gi;
+        var wordCount = value.trim().replace(regex, ' ').split(' ').length;
+        var totalChars = value.length;
+        var charCount = value.trim().length;
+        var charCountNoSpace = value.replace(regex, '').length;
+
+        $('#wordCount').html(wordCount);
+        $('#totalChars').html(totalChars);
+        $('#charCount').html(charCount);
+        $('#charCountNoSpace').html(charCountNoSpace);
+    };
+
+
     $('#text').keyup(counter);
-    $('#text').blur(counter);
-    $('#text').focus(counter);
 });
