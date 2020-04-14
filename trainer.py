@@ -2,13 +2,13 @@ from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
 
-from text_rnn import TextRNN
+from models.text_rnn import TextRNN
 
-max_features = 5000
-maxlen = 400
-batch_size = 32
-embedding_dims = 50
-epochs = 10
+max_features = 50
+maxlen = 40
+batch_size = 16
+embedding_dims = 20
+epochs = 1
 
 print('Loading data...')
 (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=max_features)

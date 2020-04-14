@@ -1,3 +1,14 @@
+# Gradest
+A tool to grade your writing in real time. 
+
+
+This project consists of the following peices.
+* Website - Single page app hosted on github that runs text through a tensorflow.js model and returns a grade.
+* Data Collection - Scripts to aggregate the text and text attributes (writer age, publication, writer name, ect) 
+used to help train the tensorflow model. 
+* Model Creation - Scripts to train the tensorflow model and convert it to tensorflow.js.
+
+
 
 
 ### Questions
