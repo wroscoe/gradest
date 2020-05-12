@@ -38,6 +38,7 @@ datasets may not have the age of the author.
 
 ### References (give credit): 
 * [Keras Text Classification Models](https://github.com/ShawnyXiao/TextClassification-Keras)
+* [Keras to tensorlfow.js](https://github.com/MihailSalnikov/NERjs)
 * [convert keras model to tensorflow.js](https://www.tensorflow.org/js/tutorials/conversion/import_keras)
 * [tensorflow universal sentence embeder](https://github.com/tensorflow/tfjs-models/tree/master/universal-sentence-encoder) with [colab example, requires TF1](https://colab.research.google.com/github/tensorflow/hub/blob/master/examples/colab/semantic_similarity_with_tf_hub_universal_encoder_lite.ipynb)
 * [tensorflow_js using word embeddings](https://github.com/tensorflow/tfjs-examples/tree/master/sentiment)
